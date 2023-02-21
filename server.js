@@ -4,8 +4,12 @@ require('dotenv').config()
 require("./config/dbConfig").dbConnection()
 app.use(express.json())
 const userRoute = require('./routes/userRoute')
+const adminRoute = require('./routes/adminRoute')
+const doctorsRoute = require('./routes/doctorsRoute')
 
 app.use('/api/user',userRoute)
+app.use('/api/admin', adminRoute)
+app.use('/api/doctor', doctorsRoute)
 
 const PORT = process.env.PORT || 5000;
 
